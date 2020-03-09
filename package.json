@@ -1,5 +1,5 @@
 {
-  "private": false,
+  "private": true,
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -17,11 +17,5 @@
   "dependencies": {
     "jquery": "^3.4.1",
     "vue": "^2.5.0"
-  },
-  "name": "dhivehifield",
-  "version": "1.0.0",
-  "description": "Created fo laravel nova thaana keyboard",
-  "main": "webpack.mix.js",
-  "author": "Mohamed Aiman",
-  "license": "ISC"
+  }
 }
