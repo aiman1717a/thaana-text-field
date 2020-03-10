@@ -796,6 +796,8 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
 //
 //
 //
@@ -817,7 +819,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            my_field: null,
             letters: {
                 'q': 'ް',
                 'w': 'އ',
@@ -903,7 +904,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Fill the given FormData object with the field's internal value.
          */
         fill: function fill(formData) {
-            formData.append(this.field.attribute, this.value || '');
+            var ref = this;
+            var my_value = this.value;
+            var temp = [];
+            for (var i = 0; i < my_value.length; i++) {
+                temp.push(ref.match(my_value.charAt(i)));
+            }
+            console.log('text', temp.join(''));
+            formData.append(this.field.attribute, temp.join('') || '');
         },
 
 
@@ -912,26 +920,48 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          */
         handleChange: function handleChange(value) {
             this.value = value;
+        },
+
+        match: function match(letter) {
+            var ref = this;
+            var _iteratorNormalCompletion = true;
+            var _didIteratorError = false;
+            var _iteratorError = undefined;
+
+            try {
+                for (var _iterator = Object.entries(ref.letters)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                    var _ref = _step.value;
+
+                    var _ref2 = _slicedToArray(_ref, 2);
+
+                    var key = _ref2[0];
+                    var value = _ref2[1];
+
+                    if (letter === key) {
+                        return value;
+                    }
+                }
+            } catch (err) {
+                _didIteratorError = true;
+                _iteratorError = err;
+            } finally {
+                try {
+                    if (!_iteratorNormalCompletion && _iterator.return) {
+                        _iterator.return();
+                    }
+                } finally {
+                    if (_didIteratorError) {
+                        throw _iteratorError;
+                    }
+                }
+            }
+
+            return letter;
         }
     },
     watch: {
         value: function value(val) {
-            console.log(val);
-
-            var ref = this;
-            var text = [];
-            for (var i = 0; i < this.value.length; i++) {
-                console.log(this.value);
-                for (var letter in ref.letters) {
-                    console.log('letter', letter);
-                    if (ref.letters.hasOwnProperty(letter)) {
-                        if (this.value.charAt(i) === letter) {
-                            text.push(ref.letters[letter]);
-                        }
-                    }
-                }
-            }
-            console.log('text', text);
+            // console.log(val);
         }
     },
     mounted: function mounted() {
