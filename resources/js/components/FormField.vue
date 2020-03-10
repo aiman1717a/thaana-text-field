@@ -111,6 +111,11 @@ export default {
          */
         handleChange(value) {
             this.value = value;
+        },
+    },
+    watch: {
+        value: function (val) {
+           console.log(val);
 
             var ref = this;
             var text  = [];
@@ -124,11 +129,6 @@ export default {
                 }
             }
             console.log('text', text);
-        },
-    },
-    watch: {
-        value: function (val) {
-           console.log(val)
         }
     },
     mounted() {
