@@ -817,7 +817,72 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            my_field: null
+            my_field: null,
+            letters: {
+                'q': 'ް',
+                'w': 'އ',
+                'e': 'ެ',
+                'r': 'ރ',
+                't': 'ތ',
+                'y': 'ޔ',
+                'u': 'ު',
+                'i': 'ި',
+                'o': 'ޮ',
+                'p': 'ޕ',
+                'a': 'ަ',
+                's': 'ސ',
+                'd': 'ދ',
+                'f': 'ފ',
+                'g': 'ގ',
+                'h': 'ހ',
+                'j': 'ޖ',
+                'k': 'ކ',
+                'l': 'ލ',
+                'z': 'ޒ',
+                'x': '×',
+                'c': 'ޗ',
+                'v': 'ވ',
+                'b': 'ބ',
+                'n': 'ނ',
+                'm': 'މ',
+                'Q': 'ޤ',
+                'W': 'ޢ',
+                'E': 'ޭ',
+                'R': 'ޜ',
+                'T': 'ޓ',
+                'Y': 'ޠ',
+                'U': 'ޫ',
+                'I': 'ީ',
+                'O': 'ޯ',
+                'P': '÷',
+                'A': 'ާ',
+                'S': 'ށ',
+                'D': 'ޑ',
+                'F': 'ﷲ',
+                'G': 'ޣ',
+                'H': 'ޙ',
+                'J': 'ޛ',
+                'K': 'ޚ',
+                'L': 'ޅ',
+                'Z': 'ޡ',
+                'X': 'ޘ',
+                'C': 'ޝ',
+                'V': 'ޥ',
+                'B': 'ޞ',
+                'N': 'ޏ',
+                'M': 'ޟ',
+                ',': '،',
+                ';': '؛',
+                '?': '؟',
+                '<': '>',
+                '>': '<',
+                '[': ']',
+                ']': '[',
+                '(': ')',
+                ')': '(',
+                '{': '}',
+                '}': '{'
+            }
         };
     },
 
@@ -852,6 +917,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     watch: {
         value: function value(val) {
             console.log(val);
+
+            var ref = this;
+            var text = [];
+            for (var i = 0; i < this.value.length; i++) {
+                for (var letter in ref.letters) {
+                    if (ref.letters.hasOwnProperty(letter)) {
+                        if (this.value.charAt(i) === letter) {
+                            text.push(ref.letters[letter]);
+                        }
+                    }
+                }
+            }
+            console.log('text', text);
         }
     },
     mounted: function mounted() {

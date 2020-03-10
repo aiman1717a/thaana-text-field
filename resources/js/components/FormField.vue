@@ -19,7 +19,7 @@ import { FormField, HandlesValidationErrors } from 'laravel-nova'
 export default {
     data(){
         return{
-            my_field: null
+            my_field: null,
             letters: {
                 'q': 'ް',
                 'w': 'އ',
