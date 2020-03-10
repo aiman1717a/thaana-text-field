@@ -103,6 +103,15 @@ export default {
          * Fill the given FormData object with the field's internal value.
          */
         fill(formData) {
+            formData.append(this.field.attribute, this.value || '')
+        },
+
+        /**
+         * Update the field's internal value.
+         */
+        handleChange(value) {
+            this.value = value;
+
             var ref = this;
             var text  = [];
             for (var i = 0; i < this.value.length; i++) {
@@ -115,14 +124,6 @@ export default {
                 }
             }
             console.log('text', text);
-            formData.append(this.field.attribute, this.value || '')
-        },
-
-        /**
-         * Update the field's internal value.
-         */
-        handleChange(value) {
-            this.value = value
         },
     },
     watch: {
