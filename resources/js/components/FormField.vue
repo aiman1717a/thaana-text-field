@@ -120,12 +120,12 @@ export default {
             var ref = this;
             var text  = [];
             for (var i = 0; i < this.value.length; i++) {
+                console.log(this.value);
                 for(var letter in ref.letters){
+                    console.log('letter', letter);
                     if (ref.letters.hasOwnProperty(letter)) {
                         if(this.value.charAt(i) === letter){
                             text.push(ref.letters[letter])
-                        }else{
-                            text.push(this.value.charAt(i));
                         }
                     }
                 }
