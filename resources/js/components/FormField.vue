@@ -19,7 +19,6 @@ import { FormField, HandlesValidationErrors } from 'laravel-nova'
 export default {
     data(){
         return{
-            my_field: null,
             letters: {
                 'q': 'ް',
                 'w': 'އ',
@@ -103,7 +102,14 @@ export default {
          * Fill the given FormData object with the field's internal value.
          */
         fill(formData) {
-            formData.append(this.field.attribute, this.value || '')
+            var ref = this;
+            var my_value = this.value;
+            var temp = []
+            for (var i = 0; i < my_value.length; i++) {
+                temp.push(ref.match(my_value.charAt(i)));
+            }
+            console.log('text', temp.join(''));
+            formData.append(this.field.attribute, temp.join('') || '')
         },
 
         /**
@@ -112,25 +118,19 @@ export default {
         handleChange(value) {
             this.value = value;
         },
+        match: function (letter) {
+            var ref = this;
+            for (let [key, value] of Object.entries(ref.letters)) {
+                if(letter === key){
+                    return value;
+                }
+            }
+            return letter;
+        }
     },
     watch: {
         value: function (val) {
-           console.log(val);
-
-            var ref = this;
-            var text  = [];
-            for (var i = 0; i < this.value.length; i++) {
-                console.log(this.value);
-                for(var letter in ref.letters){
-                    console.log('letter', letter);
-                    if (ref.letters.hasOwnProperty(letter)) {
-                        if(this.value.charAt(i) === letter){
-                            text.push(ref.letters[letter])
-                        }
-                    }
-                }
-            }
-            console.log('text', text);
+           // console.log(val);
         }
     },
     mounted() {
