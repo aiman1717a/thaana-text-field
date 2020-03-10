@@ -124,6 +124,8 @@ export default {
                     if (ref.letters.hasOwnProperty(letter)) {
                         if(this.value.charAt(i) === letter){
                             text.push(ref.letters[letter])
+                        }else{
+                            text.push(this.value.charAt(i));
                         }
                     }
                 }

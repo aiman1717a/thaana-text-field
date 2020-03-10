@@ -925,6 +925,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     if (ref.letters.hasOwnProperty(letter)) {
                         if (this.value.charAt(i) === letter) {
                             text.push(ref.letters[letter]);
+                        } else {
+                            text.push(this.value.charAt(i));
                         }
                     }
                 }
