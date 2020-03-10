@@ -104,7 +104,7 @@ export default {
         fill(formData) {
             var ref = this;
             var my_value = this.value;
-            var temp = []
+            var temp = [];
             for (var i = 0; i < my_value.length; i++) {
                 temp.push(ref.match(my_value.charAt(i)));
             }
