@@ -9,6 +9,7 @@
                 :placeholder="field.name"
                 v-model="value"
             />
+            <input type="hidden" :name="field.name + '_thaanaKeyboardState'" value="phonetic">
         </template>
     </default-field>
 </template>
@@ -137,8 +138,8 @@ export default {
     },
     mounted() {
         console.log('Home mounted');
-        thaanaKeyboard.defaultKeyboard = 'phonetic';
-        console.log(thaanaKeyboard.defaultKeyboard);
+        // thaanaKeyboard.defaultKeyboard = 'phonetic';
+        // console.log(thaanaKeyboard.defaultKeyboard);
         // $('.thaana-keyboard').thaana({keyboard: 'phonetic'});
     }
 }
@@ -146,6 +147,7 @@ export default {
 
 <style lang="scss" scoped>
     .thaana-keyboard {
+        font-family: faruma, 'mv iyyu nala', 'mv elaaf normal';
         direction: rtl;
     }
 </style>

@@ -440,7 +440,7 @@ exports = module.exports = __webpack_require__(12)(false);
 
 
 // module
-exports.push([module.i, "\n.thaana-keyboard[data-v-c023248a] {\n  direction: rtl;\n}\n", ""]);
+exports.push([module.i, "\n.thaana-keyboard[data-v-c023248a] {\n  font-family: faruma, 'mv iyyu nala', 'mv elaaf normal';\n  direction: rtl;\n}\n", ""]);
 
 // exports
 
@@ -813,6 +813,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 //
 //
 //
+//
 
 
 // import 'jtk.min.js'
@@ -968,8 +969,8 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
     },
     mounted: function mounted() {
         console.log('Home mounted');
-        thaanaKeyboard.defaultKeyboard = 'phonetic';
-        console.log(thaanaKeyboard.defaultKeyboard);
+        // thaanaKeyboard.defaultKeyboard = 'phonetic';
+        // console.log(thaanaKeyboard.defaultKeyboard);
         // $('.thaana-keyboard').thaana({keyboard: 'phonetic'});
     }
 });
@@ -28415,6 +28416,14 @@ var render = function() {
               }
               _vm.value = $event.target.value
             }
+          }
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: {
+            type: "hidden",
+            name: _vm.field.name + "_thaanaKeyboardState",
+            value: "phonetic"
           }
         })
       ])
