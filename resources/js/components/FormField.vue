@@ -9,7 +9,6 @@
                 :placeholder="field.name"
                 v-model="value"
             />
-            <input type="hidden" :name="field.name + '_thaanaKeyboardState'" value="phonetic">
         </template>
     </default-field>
 </template>
@@ -148,7 +147,6 @@ export default {
 
 <style lang="scss" scoped>
     .thaana-keyboard {
-        font-family: faruma, 'mv iyyu nala', 'mv elaaf normal';
         direction: rtl;
     }
 </style>
