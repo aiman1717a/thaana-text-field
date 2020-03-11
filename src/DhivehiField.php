@@ -14,4 +14,11 @@ class DhivehiField extends Field
     public $component = 'dhivehi-field';
 
     public $showOnIndex = false;
+
+
+    public function type($type = 'phonetic'){
+        return $this->withMeta([
+            'type' => $type,
+        ]);
+    }
 }
