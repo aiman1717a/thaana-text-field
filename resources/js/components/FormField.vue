@@ -136,10 +136,9 @@ export default {
         }
     },
     mounted() {
-        console.log('Home mounted');
+        // console.log('Home mounted');
         thaanaKeyboard.defaultKeyboard = this.field.type;
-        thaanaKeyboard.setHandlerByClass('thaana-keyboard', 'enable');
-        console.log(thaanaKeyboard.defaultKeyboard);
+        thaanaKeyboard.setHandlerByClass('thaana-keyboard', this.field.status);
         // $('.thaana-keyboard').thaana({keyboard: 'phonetic'});
     }
 }

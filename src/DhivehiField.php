@@ -15,6 +15,17 @@ class DhivehiField extends Field
 
     public $showOnIndex = false;
 
+    public function thaana($thaana = true){
+        if($thaana){
+            return $this->withMeta([
+                'status' => 'enable',
+            ]);
+        }else{
+            return $this->withMeta([
+                'status' => 'disable',
+            ]);
+        }
+    }
 
     public function type($type = 'phonetic'){
         return $this->withMeta([
