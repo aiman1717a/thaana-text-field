@@ -139,7 +139,7 @@ export default {
     mounted() {
         console.log('Home mounted');
         thaanaKeyboard.defaultKeyboard = 'phonetic';
-        thaanaKeyboard.setHandlerById('thaana-keyboard', 'enable');
+        thaanaKeyboard.setHandlerByClass('thaana-keyboard', 'enable');
         console.log(thaanaKeyboard.defaultKeyboard);
         // $('.thaana-keyboard').thaana({keyboard: 'phonetic'});
     }
