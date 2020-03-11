@@ -904,14 +904,16 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
          * Fill the given FormData object with the field's internal value.
          */
         fill: function fill(formData) {
-            var ref = this;
-            var my_value = this.value;
-            var temp = [];
-            for (var i = 0; i < my_value.length; i++) {
-                temp.push(ref.match(my_value.charAt(i)));
-            }
-            console.log('text', temp.join(''));
-            formData.append(this.field.attribute, temp.join('') || '');
+            // var ref = this;
+            // var my_value = this.value;
+            // var temp = [];
+            // for (var i = 0; i < my_value.length; i++) {
+            //     temp.push(ref.match(my_value.charAt(i)));
+            // }
+            // console.log('text', temp.join(''));
+            // formData.append(this.field.attribute, temp.join('') || '')
+
+            formData.append(this.field.attribute, this.value || '');
         },
 
 
@@ -961,12 +963,13 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
     },
     watch: {
         value: function value(val) {
-            // console.log(val);
+            console.log(val);
         }
     },
     mounted: function mounted() {
         console.log('Home mounted');
-        $('.thaana-keyboard').thaana({ keyboard: 'phonetic' });
+        thaanaKeyboard.defaultKeyboard = 'phonetic';
+        // $('.thaana-keyboard').thaana({keyboard: 'phonetic'});
     }
 });
 

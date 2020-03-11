@@ -102,14 +102,16 @@ export default {
          * Fill the given FormData object with the field's internal value.
          */
         fill(formData) {
-            var ref = this;
-            var my_value = this.value;
-            var temp = [];
-            for (var i = 0; i < my_value.length; i++) {
-                temp.push(ref.match(my_value.charAt(i)));
-            }
-            console.log('text', temp.join(''));
-            formData.append(this.field.attribute, temp.join('') || '')
+            // var ref = this;
+            // var my_value = this.value;
+            // var temp = [];
+            // for (var i = 0; i < my_value.length; i++) {
+            //     temp.push(ref.match(my_value.charAt(i)));
+            // }
+            // console.log('text', temp.join(''));
+            // formData.append(this.field.attribute, temp.join('') || '')
+
+            formData.append(this.field.attribute, this.value || '')
         },
 
         /**
@@ -130,12 +132,13 @@ export default {
     },
     watch: {
         value: function (val) {
-           // console.log(val);
+           console.log(val);
         }
     },
     mounted() {
         console.log('Home mounted');
-        $('.thaana-keyboard').thaana({keyboard: 'phonetic'});
+        thaanaKeyboard.defaultKeyboard = 'phonetic';
+        // $('.thaana-keyboard').thaana({keyboard: 'phonetic'});
     }
 }
 </script>

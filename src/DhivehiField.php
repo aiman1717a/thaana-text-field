@@ -12,4 +12,6 @@ class DhivehiField extends Field
      * @var string
      */
     public $component = 'dhivehi-field';
+
+    public $showOnIndex = false;
 }

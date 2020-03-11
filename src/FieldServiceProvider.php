@@ -19,8 +19,10 @@ class FieldServiceProvider extends ServiceProvider
             Nova::script('dhivehi-field', __DIR__.'/../dist/js/field.js');
             Nova::style('dhivehi-field', __DIR__.'/../dist/css/field.css');
             Nova::script('jquer', __DIR__.'/../dist/js/jquery.js');
-            Nova::script('thaana-keyboard', __DIR__.'/../dist/thaana.min.js');
+//            Nova::script('thaana-keyboard', __DIR__.'/../dist/thaana.min.js');
 //            Nova::script('thaana-keyboard', __DIR__.'/../dist/thaana_2.js');
+            Nova::script('thaana', __DIR__.'/../dist/jtk.js');
+
 
 //            Nova::script('aiman', public_path('js/thaana-keyboard.min.js'));
         });
