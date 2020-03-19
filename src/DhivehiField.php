@@ -19,7 +19,7 @@ class DhivehiField extends Field
         parent::__construct($name, $attribute, $resolveCallback);
 
         $this->thaana(true);
-        $this->type(true);
+        $this->type();
     }
 
     public function thaana($thaana = true){
