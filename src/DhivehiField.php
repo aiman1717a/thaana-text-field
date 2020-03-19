@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\Field;
 
 class DhivehiField extends Field
 {
+    public $showOnIndex = false;
     /**
      * The field's component.
      *
@@ -13,7 +14,13 @@ class DhivehiField extends Field
      */
     public $component = 'dhivehi-field';
 
-    public $showOnIndex = false;
+    public function __construct(string $name, ?string $attribute = null, ?mixed $resolveCallback = null)
+    {
+        parent::__construct($name, $attribute, $resolveCallback);
+
+        $this->thaana(true);
+        $this->type(true);
+    }
 
     public function thaana($thaana = true){
         if($thaana){
