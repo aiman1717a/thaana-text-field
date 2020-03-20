@@ -1,6 +1,6 @@
 <?php
 
-namespace Aiman\DhivehiField;
+namespace Aiman\ThaanaTextField;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;

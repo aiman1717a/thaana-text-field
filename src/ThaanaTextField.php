@@ -1,10 +1,10 @@
 <?php
 
-namespace Aiman\DhivehiField;
+namespace Aiman\ThaanaTextField;
 
 use Laravel\Nova\Fields\Field;
 
-class DhivehiField extends Field
+class ThaanaTextField extends Field
 {
     public $showOnIndex = false;
     /**
@@ -12,7 +12,7 @@ class DhivehiField extends Field
      *
      * @var string
      */
-    public $component = 'dhivehi-field';
+    public $component = 'thaana-text-field';
 
     public function __construct(string $name, ?string $attribute = null, ?mixed $resolveCallback = null)
     {

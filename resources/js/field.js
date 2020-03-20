@@ -1,5 +1,5 @@
 Nova.booting((Vue, router, store) => {
-  Vue.component('index-dhivehi-field', require('./components/IndexField'))
-  Vue.component('detail-dhivehi-field', require('./components/DetailField'))
-  Vue.component('form-dhivehi-field', require('./components/FormField'))
+  Vue.component('index-thaana-text-field', require('./components/IndexField'))
+  Vue.component('detail-thaana-text-field', require('./components/DetailField'))
+  Vue.component('form-thaana-text-field', require('./components/FormField'))
 })

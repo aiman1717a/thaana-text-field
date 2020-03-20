@@ -1,9 +1,10 @@
 {
-    "name": "aiman/dhivehi-field",
-    "description": "A Laravel Nova field.",
+    "name": "aiman/thaana-text-field",
+    "description": "A Laravel Nova field for Thaana",
     "keywords": [
         "laravel",
-        "nova"
+        "nova",
+        "thaana"
     ],
     "license": "MIT",
     "require": {
@@ -11,13 +12,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Aiman\\DhivehiField\\": "src/"
+            "Aiman\\ThaanaTextField\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Aiman\\DhivehiField\\FieldServiceProvider"
+                "Aiman\\ThaanaTextField\\FieldServiceProvider"
             ]
         }
     },
