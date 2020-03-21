@@ -2,7 +2,8 @@
     <default-field :field="field" :errors="errors">
         <template slot="field">
             <input
-                :id="field.name"
+                :id="field.attribute"
+                :dusk="field.attribute"
                 type="text"
                 class="w-full form-control form-input form-input-bordered thaana-keyboard"
                 :class="errorClasses"
