@@ -185,6 +185,7 @@ module.exports = __webpack_require__(18);
 /***/ (function(module, exports, __webpack_require__) {
 
 Nova.booting(function (Vue, router, store) {
+  Vue.config.devtools = true;
   Vue.component('index-thaana-text-field', __webpack_require__(3));
   Vue.component('detail-thaana-text-field', __webpack_require__(6));
   Vue.component('form-thaana-text-field', __webpack_require__(9));
@@ -798,7 +799,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-//
 //
 //
 //
@@ -28404,8 +28404,7 @@ var render = function() {
             "w-full form-control form-input form-input-bordered thaana-keyboard",
           class: _vm.errorClasses,
           attrs: {
-            id: _vm.field.attribute,
-            dusk: _vm.field.attribute,
+            id: _vm.field.name,
             type: "text",
             placeholder: _vm.field.name
           },
