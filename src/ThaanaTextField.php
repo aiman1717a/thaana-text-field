@@ -39,4 +39,10 @@ class ThaanaTextField extends Field
             'type' => $type,
         ]);
     }
+
+    public function convertToLatin($latin = 'latin'){
+        return $this->withMeta([
+            'latin' => $latin,
+        ]);
+    }
 }

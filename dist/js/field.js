@@ -462,6 +462,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          */
         handleChange: function handleChange(value) {
             this.value = value;
+        },
+        handleKeyup: function handleKeyup(event) {
+            this.value = event.target.value;
+            Nova.$emit('field-update-' + this.field.latin, {
+                value: event.target.value
+            });
         }
     },
     computed: {
@@ -27933,9 +27939,7 @@ var render = function() {
             keypress: function($event) {
               _vm.value = $event.target.value
             },
-            keyup: function($event) {
-              _vm.value = $event.target.value
-            },
+            keyup: _vm.handleKeyup,
             keydown: function($event) {
               _vm.value = $event.target.value
             },

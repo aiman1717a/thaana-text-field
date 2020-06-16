@@ -2,16 +2,16 @@
     <default-field :field="field" :errors="errors">
         <template slot="field">
             <input
-                    :id="name"
-                    type="text"
-                    class="w-full form-control form-input form-input-bordered"
-                    :class="errorClasses"
-                    :placeholder="field.name"
-                    v-model="value"
-                    @keypress="value = $event.target.value"
-                    @keyup="value = $event.target.value"
-                    @keydown="value = $event.target.value"
-                    @input="value = $event.target.value"
+                :id="name"
+                type="text"
+                class="w-full form-control form-input form-input-bordered"
+                :class="errorClasses"
+                :placeholder="field.name"
+                v-model="value"
+                @keypress="value = $event.target.value"
+                @keyup="handleKeyup"
+                @keydown="value = $event.target.value"
+                @input="value = $event.target.value"
             />
         </template>
     </default-field>
@@ -49,6 +49,13 @@
              */
             handleChange(value) {
                 this.value = value;
+            },
+
+            handleKeyup(event) {
+                this.value = event.target.value;
+                Nova.$emit('field-update-' + this.field.latin, {
+                    value: event.target.value
+                })
             },
         },
         computed: {
