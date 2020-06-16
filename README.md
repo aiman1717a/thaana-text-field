@@ -39,9 +39,17 @@ You can turn thaana keyboard type. by default it is `phonetic`.
 ThaanaTextField::make('Content', 'content')->type()
 ```
 
-## Important
-This package is tested for **Nova Fields only**
+### Thaana to Latin Convertion
+install this [Thaana Latin Field](https://github.com/aiman1717a/ThaanaLatinField) in order for the function to work
+ThaanaTextField supports auto latin convertion
+```
+ThaanaTextField::make('Content', 'content')->convertToLatin('latin_content'),
+ThaanaLatinField::make('Latin Content', 'latin_content'),
+```
 
+## Important
+This package is tested for **nova 2.0+**
+Latest tested on **nova v3.6.0**
 
 ## Credit
 Huge Credit goes for [@Jawish Hameed](https://github.com/jawish) for his thaana translation plugin [Thaana Keyboard](https://github.com/jawish/jtk)
