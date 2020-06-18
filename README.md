@@ -3,7 +3,7 @@ This Nova Package allow you to use Nova field with Thaana Keyboard
 
 ## Installation
 ```
-composer require aiman/dhivehi-field
+composer require aiman/thaana-text-field
 ```
 
 ## Usage
